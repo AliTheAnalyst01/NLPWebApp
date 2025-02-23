@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NLP APP | Register Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input {
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NLP App</h1>
+        <h3>Register Here</h3>
+        {% if message %}
+            <p style="color:red">{{message}}</p>
+        {% endif %}
+        <form action="/perform_registration" method="post">
+            <label>Name</label><br>
+            <input type="text" name="name_of_user" required><br>
+            <label>Email</label><br>
+            <input type="email" name="email_of_user" required><br>
+            <label>Password</label><br>
+            <input type="password" name="password_of_user" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already a member? <a href="/">Login Here</a></p>
+    </div>
+</body>
+</html>

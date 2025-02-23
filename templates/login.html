@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NLP APP | Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input {
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NLP App</h1>
+        <h3>Login Here</h3>
+        {% if message %}
+        <p style="color:green">{{message}}</p>
+        {% endif %}
+        <p></p>
+        <form action="/perform_login" method="post">
+            <label>Email</label><br>
+            <input type="email" name="email_of_user"><br>
+            <label>Password</label><br>
+            <input type="password" name="password_of_user"><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p>Not a member? <a href="/register">Register Here</a></p>
+    </div>
+</body>
+</html>
